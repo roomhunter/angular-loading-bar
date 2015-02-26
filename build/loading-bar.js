@@ -197,8 +197,8 @@ angular.module('cfp.loadingBar', [])
         if (!$animate) {
           $animate = $injector.get('$animate');
         }
-
-        var $parent = $document.find($parentSelector).eq(0);
+        var $parent = angular.element(document.querySelector($parentSelector));
+        //var $parent = $document.find($parentSelector).eq(0);
         $timeout.cancel(completeTimeout);
 
         // do not continually broadcast the started event:
